@@ -15,7 +15,10 @@ SpellBook::~SpellBook(void)
 void SpellBook::learnSpell(ASpell* spell)
 {
     if (spell)
+    {
+        this->forgetSpell(spell->getName());
         this->store[spell->getName()] = spell->clone();
+    }
 }
 void SpellBook::forgetSpell(std::string const &spell)
 {
