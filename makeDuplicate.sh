@@ -1,13 +1,7 @@
 #!/bin/bash
 
-IFS='.' read -ra array <<< $1
-old=${array[0]}
-IFS='.' read -ra array <<< $2
-new=${array[0]}
+cp $1.cpp $2.cpp
+cp $1.hpp $2.hpp
 
-cp $old.cpp $new.cpp
-cp $old.hpp $new.hpp
-
-
-sed -i "s/$old/$new/g" $new.cpp
-sed -i "s/$old/$new/g" $new.hpp
+sed -i "s/$1/$2/g" $2.cpp
+sed -i "s/$1/$2/g" $2.hpp

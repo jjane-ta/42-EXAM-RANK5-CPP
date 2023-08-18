@@ -2,26 +2,19 @@
 
 PrintHpp()
 {
-echo "#pragma once
-
+echo "
+#pragma once
 #include <iostream>
 
 class $1
 {
     public:
         virtual ~$1(void);
-
-
-
     protected:
-
-
     private:
-
         $1(void);
         $1($1 const & other);
         $1 & operator = ($1 const & other);
-
 };" >  $2
 }
 
@@ -38,5 +31,4 @@ for file in "$@"
         elif [[ "$doc" == "cpp" ]]; then
             echo "#include" '"'$name.hpp'"' > $file
         fi
-
     done
